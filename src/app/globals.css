@@ -1,0 +1,68 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand: #f5a623;
+  --color-brand-soft: #c47d0a;
+  --color-surface: #12121a;
+  --color-surface-2: #1a1a24;
+  --color-border: #5a5a6a;
+  --color-muted: #a1a1aa;
+  --color-canvas: #0b0b10;
+  --color-success: #33ff66;
+  --color-warning: #fbbf24;
+  --color-danger: #ff4466;
+}
+
+:root {
+  --background: #0b0b10;
+  --foreground: #f4f4f5;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family:
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    "Segoe UI",
+    "PingFang TC",
+    "Noto Sans TC",
+    sans-serif;
+}
+
+::selection {
+  background: color-mix(in oklab, var(--color-brand) 40%, transparent);
+}
+
+.pixel-panel {
+  border: 2px solid var(--color-border);
+  border-radius: 2px;
+  background: var(--color-surface);
+  box-shadow: 2px 2px 0 #000;
+}
+
+.pixel-inset {
+  border: 2px solid var(--color-border);
+  border-radius: 2px;
+  background: var(--color-surface-2);
+  box-shadow: inset 1px 1px 0 #000;
+}
+
+.pixel-btn {
+  border: 2px solid #000;
+  border-radius: 0;
+  box-shadow: 3px 3px 0 #000;
+  transition: transform 0.05s ease, box-shadow 0.05s ease;
+}
+
+.pixel-btn:not(:disabled):active {
+  transform: translate(2px, 2px);
+  box-shadow: 1px 1px 0 #000;
+}
+
+.pixel-btn:disabled {
+  opacity: 0.45;
+  box-shadow: 1px 1px 0 #000;
+  cursor: not-allowed;
+}
